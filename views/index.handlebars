@@ -1,0 +1,141 @@
+<!-- Data Table area Start-->
+<div class="data-table-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="data-table-list">
+                    <div class="basic-tb-hd">
+                        <h2>List of Characters</h2>
+                        <p>This page lists all the characters appearing throughout the Jujutsu Kaisen video game</p>
+                    </div>
+                    <div class="table-responsive">
+                        <div class="dataTables_wrappe">
+                            <div id="data-table-basic_filter" class="dataTables_filter">
+                                <label>
+                                    Search:
+                                    <input id="myInput" type="text" class="" name="search" placeholder="Search"
+                                        aria-controls="data-table-basic" onkeyup="myFunction()">
+                                </label>
+                            </div>
+                        </div>
+
+                        <table id="data-table-basic" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Photo</th>
+                                    <th>characteristics</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {{#each jujutsu}}
+
+                                <tr>
+
+                                    <td>{{{this.name}}}</td>
+                                    <td><img src="{{{this.photo}}}" style="width:200px;height:240px;" class=center></td>
+                                    <td>{{{this.characteristics}}}</td>
+
+                                </tr>
+                                {{/each}}
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Data Table area End-->
+
+<!-- jquery
+		============================================ -->
+<script src="js/vendor/jquery-1.12.4.min.js"></script>
+<!-- bootstrap JS
+		============================================ -->
+<script src="js/bootstrap.min.js"></script>
+<!-- wow JS
+		============================================ -->
+<script src="js/wow.min.js"></script>
+<!-- price-slider JS
+		============================================ -->
+<script src="js/jquery-price-slider.js"></script>
+<!-- owl.carousel JS
+		============================================ -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- scrollUp JS
+		============================================ -->
+<script src="js/jquery.scrollUp.min.js"></script>
+<!-- meanmenu JS
+		============================================ -->
+<script src="js/meanmenu/jquery.meanmenu.js"></script>
+<!-- counterup JS
+		============================================ -->
+<script src="js/counterup/jquery.counterup.min.js"></script>
+<script src="js/counterup/waypoints.min.js"></script>
+<script src="js/counterup/counterup-active.js"></script>
+<!-- mCustomScrollbar JS
+		============================================ -->
+<script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- sparkline JS
+		============================================ -->
+<script src="js/sparkline/jquery.sparkline.min.js"></script>
+<script src="js/sparkline/sparkline-active.js"></script>
+<!-- flot JS
+		============================================ -->
+<script src="js/flot/jquery.flot.js"></script>
+<script src="js/flot/jquery.flot.resize.js"></script>
+<script src="js/flot/flot-active.js"></script>
+<!-- knob JS
+		============================================ -->
+<script src="js/knob/jquery.knob.js"></script>
+<script src="js/knob/jquery.appear.js"></script>
+<script src="js/knob/knob-active.js"></script>
+<!--  Chat JS
+		============================================ -->
+<script src="js/chat/jquery.chat.js"></script>
+<!--  todo JS
+		============================================ -->
+<script src="js/todo/jquery.todo.js"></script>
+<!--  wave JS
+		============================================ -->
+<script src="js/wave/waves.min.js"></script>
+<script src="js/wave/wave-active.js"></script>
+<!-- plugins JS
+		============================================ -->
+<script src="js/plugins.js"></script>
+<!-- Data Table JS
+		============================================ -->
+
+<!-- main JS
+		============================================ -->
+<script src="js/main.js"></script>
+<!-- tawk chat JS
+		============================================ -->
+<script src="js/tawk-chat.js"></script>
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("data-table-basic");
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+</script>
